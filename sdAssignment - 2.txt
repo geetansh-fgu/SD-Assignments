@@ -45,27 +45,29 @@ INSERT INTO Orders (OrderID, ProductID, OrderQuantity) VALUES (1, 101, 5);
 INSERT INTO Orders (OrderID, ProductID, OrderQuantity) VALUES (2, 102, 3);
 
 4.     
-     a.   CREATE TABLE Employees (
+a)   
+CREATE TABLE Employees (
           EmployeeID INT PRIMARY KEY,
           Name VARCHAR(100) NOT NULL,
           Email VARCHAR(100) UNIQUE,
           JobTitle VARCHAR(50) NOT NULL
           );
      
-      b.  INSERT INTO Employees (EmployeeID, Name, Email, JobTitle) VALUES (1, 'Alice', 'alice@example.com', 'Developer');
-          INSERT INTO Employees (EmployeeID, Name, Email, JobTitle) VALUES (2, 'Bob', 'alice@example.com', 'Analyst');
+b)  
+INSERT INTO Employees (EmployeeID, Name, Email, JobTitle) VALUES (1, 'Alice', 'alice@example.com', 'Developer');
+INSERT INTO Employees (EmployeeID, Name, Email, JobTitle) VALUES (2, 'Bob', 'alice@example.com', 'Analyst');
        
-      c.  INSERT INTO Employees (EmployeeID, Name, JobTitle) VALUES (3, 'Charlie', 'Contractor');
+c)  
+INSERT INTO Employees (EmployeeID, Name, JobTitle) VALUES (3, 'Charlie', 'Contractor');
 
 
 5.     
-        
-      a.   CREATE TABLE Accounts (
+a)   
+   CREATE TABLE Accounts (
            AccountID INT PRIMARY KEY,
            MobileNumber VARCHAR(10) NOT NULL CHECK (LEN(MobileNumber) = 10),
            Balance DECIMAL(10, 2) CHECK (Balance >= 0)
            );
-
            CREATE TABLE Transactions (
            TransactionID INT PRIMARY KEY,
            AccountID INT NOT NULL,
@@ -73,14 +75,14 @@ INSERT INTO Orders (OrderID, ProductID, OrderQuantity) VALUES (2, 102, 3);
            CONSTRAINT FK_Transactions_AccountID FOREIGN KEY (AccountID) REFERENCES Accounts(AccountID)
            );
 
-      b.   
-           INSERT INTO Transactions (TransactionID, AccountID, TransactionAmount) VALUES (1, 999, 500.00);
+b)   
+INSERT INTO Transactions (TransactionID, AccountID, TransactionAmount) VALUES (1, 999, 500.00);
 
-      c.  INSERT INTO Accounts (AccountID, MobileNumber, Balance) VALUES (101, '1234567890', 1000.00);
-          INSERT INTO Accounts (AccountID, MobileNumber, Balance) VALUES (102, '0987654321', 500.00);
-
-          INSERT INTO Transactions (TransactionID, AccountID, TransactionAmount) VALUES (1, 101, 200.00);
-          INSERT INTO Transactions (TransactionID, AccountID, TransactionAmount) VALUES (2, 102, -100.00);
+c)  
+INSERT INTO Accounts (AccountID, MobileNumber, Balance) VALUES (101, '1234567890', 1000.00);
+INSERT INTO Accounts (AccountID, MobileNumber, Balance) VALUES (102, '0987654321', 500.00);
+INSERT INTO Transactions (TransactionID, AccountID, TransactionAmount) VALUES (1, 101, 200.00);
+INSERT INTO Transactions (TransactionID, AccountID, TransactionAmount) VALUES (2, 102, -100.00);
 
 
 
